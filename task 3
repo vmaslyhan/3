@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+#include <windows.h>
+
+int main()
+{
+    int p; // оголошення змінної
+    while (1) // створення циклу
+    {
+        printf("Enter the number of digits (p <= 30): \n");
+        scanf("%d", &p); // зчитування кількості розрядів з клавіатури
+        if (p > 30) // перевірка даних
+        {
+            printf("The number of bits cannot exceed 30\n");
+            continue; // повторення циклу
+        }
+        int amount = pow(2, p-2) + pow(2, p-2) + pow(2, p-2) - pow(2, p-3) - pow(2, p-3) - pow(2, p-3) + pow(2, p-4); // розрахунок кількості чисел
+        printf("Number of numbers with %d digits: %d\n\n", p, amount); // виведення результату
+        break; // вихід з циклу
+    }
+    return 0;
+}
